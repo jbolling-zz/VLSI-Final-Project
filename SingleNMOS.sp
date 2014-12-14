@@ -1,7 +1,7 @@
 *Final Project
 *Single CNFET Simulation
 *.lib '../nano_model_39/CNFET.lib' CNFET
-.include '/n/homeserver2/eehome2a/PUBLIC_HTML/nverma/hspice/45nm_bulk.m'
+.include '32nm_MGK.pm'
 
 .options NOMOD 		POST
 .options AUTOSTOP
@@ -21,7 +21,7 @@ vdd drain 0 pvds
 vin gate 0 pvgs
 
 *Transistor
-m1 drain gate 0 0 nmos l=200n w=90n
+m1 drain gate 0 0 nmos
 
 *DC sweep on gate
 .dc vdd 0 pvds 0.01 vin 0.4 pvgs 0.1
