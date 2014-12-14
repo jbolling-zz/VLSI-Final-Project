@@ -1,0 +1,29 @@
+#
+analogLib vpulse symbol
+V3
+V2
+V1
+#
+analogLib vdc symbol
+V0
+#
+gpdk090 pmos1v symbol
+PM2
+PM1
+PM0
+#
+gpdk090 nmos1v symbol
+NM10
+NM9
+NM8
+NM7
+NM6
+NM5
+NM4
+NM3
+NM2
+NM1
+NM0
+#ISCELL
+analogLib gnd symbol
+I0
