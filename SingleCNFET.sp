@@ -21,7 +21,7 @@ vdd drain 0 pvds
 vin gate 0 pvgs
 
 *Transistor
-XDevice drain gate 0 0 NCNFET 
+XDevice drain gate 0 0 NCNFET tubes=5 
 
 *DC sweep on gate
 .dc vdd 0 pvds 0.01 vin 0.4 pvgs 0.1

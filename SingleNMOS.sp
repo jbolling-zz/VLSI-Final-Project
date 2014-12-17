@@ -21,7 +21,7 @@ vdd drain 0 pvds
 vin gate 0 pvgs
 
 *Transistor
-m1 drain gate 0 0 nmos
+m1 drain gate 0 0 nmos l=32n w=1u
 
 *DC sweep on gate
 .dc vdd 0 pvds 0.01 vin 0.4 pvgs 0.1
