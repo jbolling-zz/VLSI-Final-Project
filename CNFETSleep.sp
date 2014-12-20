@@ -30,7 +30,7 @@
 
 *Voltage Sources
 vdd vdd gnd pvdd
-vsleep nsleep gnd pulse(0v pvsleep 1p 1p 1p 50p 100p)
+vsleep nsleep gnd pulse(0v pvsleep 1p 1p 1p 100p 200p)
 
 *CNFET Sleep Transistor
 XDevice fgnd nsleep gnd gnd NCNFET tubes=5 
@@ -49,5 +49,5 @@ m10 o5 o4 vdd vdd pmos l=32n w=32n
 
 *Transient Analysis
 .IC v(o1)=pvdd
-.tran 0.01p 100p UIC
+.tran 0.01p 200p UIC
 .end
