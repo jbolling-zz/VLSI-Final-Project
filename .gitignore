@@ -5,3 +5,7 @@
 *.st0
 *.log
 *.out
+*.swo
+*.swp
+*.ic0
+*.tr0
