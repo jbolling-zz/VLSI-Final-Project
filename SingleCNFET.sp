@@ -13,16 +13,16 @@
 
 *Parameters
 .param TEMP=27
-.param pvds=1.0V
-.param pvgs=1.0V
+.param pvds=0.9V
+.param pvgs=0.9V
 
 *Voltage Sources
 vdd drain 0 pvds
 vin gate 0 pvgs
 
 *Transistor
-XDevice drain gate 0 0 NCNFET tubes=5 
+XDevice drain gate 0 0 NCNFET tubes=1 
 
 *DC sweep on gate
-.dc vdd 0 pvds 0.01 vin 0.4 pvgs 0.1
+.dc vdd 0 pvds 0.01 vin 0 pvgs 0.1
 .end
