@@ -30,24 +30,24 @@
 
 *Voltage Sources
 vdd vdd gnd pvdd
-vsleep nsleep gnd pulse(0v pvsleep 1p 1p 1p 100p 200p)
+vsleep nsleep gnd pulse(0v pvsleep 1p 1p 1p 200p 800p)
 
 *CNFET Sleep Transistor
 XDevice fgnd nsleep gnd gnd NCNFET tubes=5 
 
 *5 stage CMOS Ring Oscillator
-m1 o1 o5 fgnd gnd nmos l=32n w=32n
-m2 o1 o5 vdd vdd pmos l=32n w=32n
-m3 o2 o1 fgnd gnd nmos l=32n w=32n
-m4 o2 o1 vdd vdd pmos l=32n w=32n
-m5 o3 o2 fgnd gnd nmos l=32n w=32n
-m6 o3 o2 vdd vdd pmos l=32n w=32n
-m7 o4 o3 fgnd gnd nmos l=32n w=32n
-m8 o4 o3 vdd vdd pmos l=32n w=32n
-m9 o5 o4 fgnd gnd nmos l=32n w=32n
-m10 o5 o4 vdd vdd pmos l=32n w=32n
+m1 o1 o5 fgnd gnd nmos l=32n w=43n
+m2 o1 o5 vdd vdd pmos l=32n w=43n
+m3 o2 o1 fgnd gnd nmos l=32n w=43n
+m4 o2 o1 vdd vdd pmos l=32n w=43n
+m5 o3 o2 fgnd gnd nmos l=32n w=43n
+m6 o3 o2 vdd vdd pmos l=32n w=43n
+m7 o4 o3 fgnd gnd nmos l=32n w=43n
+m8 o4 o3 vdd vdd pmos l=32n w=43n
+m9 o5 o4 fgnd gnd nmos l=32n w=43n
+m10 o5 o4 vdd vdd pmos l=32n w=43n
 
 *Transient Analysis
 .IC v(o1)=pvdd
-.tran 0.01p 200p UIC
+.tran 0.01p 800p UIC
 .end
