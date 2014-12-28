@@ -1,7 +1,7 @@
 *Final Project
 *Joseph Bolling and Akshay Goel
 *
-*Simulation of a 5 stage cmos oscillator with a CNFET sleep transistor on the 
+*Simulation of a 5 stage cmos oscillator with an NMOS sleep transistor on the 
 *ground connection
 *
 *NETLIST NODES
