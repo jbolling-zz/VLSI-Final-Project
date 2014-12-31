@@ -57,6 +57,7 @@ m9 o5 o4 fgnd gnd nmos l=32n w=43n
 m10 o5 o4 vdd vdd pmos l=32n w=43n
 
 *Transient Analysis
-.IC v(o1)=pvdd
-.tran 0.01p 800p UIC
+*.IC v(o1)=pvdd
+*.tran 0.01p 800p UIC
+.dc vsleep 0 pvdd 0.01 
 .end
