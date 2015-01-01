@@ -36,13 +36,16 @@ vbuff2 buffvdd2 gnd pvdd
 vin o0 gnd pvdd
 
 *2 stage buffer for sleep signal
-mb1 sleep nsleep gnd gnd nmos l=32n w=43n
-mb2 sleep nsleep buffvdd1 buffvdd1 pmos l=32n w=43n
-mb3 bufout sleep gnd gnd nmos l=32n w=43n
-mb4 bufout sleep buffvdd2 buffvdd2 pmos l=32n w=43n
+*mb1 sleep nsleep gnd gnd nmos l=32n w=43n
+*mb2 sleep nsleep buffvdd1 buffvdd1 pmos l=32n w=43n
+*mb3 bufout sleep gnd gnd nmos l=32n w=43n
+*mb4 bufout sleep buffvdd2 buffvdd2 pmos l=32n w=43n
+
 
 *CNFET Sleep Transistor
-XDevice fgnd bufout gnd gnd NCNFET tubes=5 
+XDevice fgnd nsleep gnd gnd NCNFET tubes=3
+*msleep fgnd nsleep gnd gnd nmos l=32n w=43n
+*vshort fgnd gnd 0
 
 *5 stage CMOS Inverter Chain
 m1 o1 o0 fgnd gnd nmos l=32n w=43n

@@ -31,9 +31,17 @@
 *Voltage Sources
 vdd vdd gnd pvdd
 vsleep nsleep gnd pulse(0v pvsleep 1p 1p 1p 200p 800p)
+vbuff1 buffvdd1 gnd pvdd
+vbuff2 buffvdd2 gnd pvdd
+
+*2 stage buffer for sleep signal
+mb1 sleep nsleep gnd gnd nmos l=32n w=43n
+mb2 sleep nsleep buffvdd1 buffvdd1 pmos l=32n w=43n
+mb3 bufout sleep gnd gnd nmos l=32n w=43n
+mb4 bufout sleep buffvdd2 buffvdd2 pmos l=32n w= 43n
 
 *NMOS Sleep Transistor
-m0 fgnd nsleep gnd gnd nmos l=32n w=43n 
+m0 fgnd bufout gnd gnd nmos l=32n w=43n 
 
 *5 stage CMOS Ring Oscillator
 m1 o1 o5 fgnd gnd nmos l=32n w=43n
@@ -50,4 +58,5 @@ m10 o5 o4 vdd vdd pmos l=32n w=43n
 *Transient Analysis
 .IC v(o1)=pvdd
 .tran 0.01p 800p UIC
+.plot tran I2(m0)
 .end
