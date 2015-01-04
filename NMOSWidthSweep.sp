@@ -1,6 +1,7 @@
 *Final Project
 *Single CNFET Simulation
-.lib 'nano_model_39/CNFET.lib' CNFET
+*.lib 'nano_model_39/CNFET.lib' CNFET
+.include '32nm_MGK.pm'
 
 .options NOMOD 		POST
 .options AUTOSTOP
@@ -14,18 +15,18 @@
 .param TEMP=27
 .param pvds=0.9V
 .param pvgs=0.9V
-.param ptubes=1
+.param pwidth=43n
 
 *Voltage Sources
 vdd drain 0 pvds
-*vin gate 0 pvgs
-vin gate 0 pulse(0 pvgs 0 10p 10p 20 40)
+vin gate 0 pvgs
 
 *Transistor
-XDevice drain gate 0 0 NCNFET tubes=ptubes
+*XDevice drain gate 0 0 NCNFET tubes=ptubes
+m1 drain gate 0 0 nmos l=32n w=pwidth
 
 *DC sweep on gate
-.dc ptubes 1 200 1 vin 0 pvgs pvgs 
+.dc vin 0 pvgs pvgs pwidth 32n 1500n 1n
 *.dc ptubes 1 200 1
 *.tran 0.01p 200p sweep ptubes 1 100 1
 .end
